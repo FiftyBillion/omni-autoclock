@@ -38,7 +38,6 @@ clockIO_btn_xpath = '//*[@id="omnibpm-main-menu"]/ul[3]/li[2]/button'
 wait.until(
     EC.presence_of_element_located((By.XPATH, clockIO_btn_xpath))
 ).click()
-# driver.find_element_by_xpath(clockIO_btn_xpath).click()
 
 clockin_btn_xpath = '//*[@id="mainui"]/div/div[1]/div[3]/div/div/div/div/div/div/button'
 try:

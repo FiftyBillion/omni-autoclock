@@ -22,6 +22,6 @@ RUN ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
 # install selenium
 RUN pip3 install selenium
 
-COPY auto-clock-in.py .
+COPY auto-clocker.py .
 
-ENTRYPOINT [ "python3", "/auto-clock-in.py" ]
+ENTRYPOINT [ "python3", "/auto-clocker.py" ]
