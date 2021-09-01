@@ -44,12 +44,12 @@ After the image is pushed to container registry, we can now create the schedule 
 
 Create cron schedule task for clock in
 ```
-az acr task create --name schedule-auto-clock-in --registry xxxx --schedule "0 1 * * 1-5" --cmd "xxxx.azurecr.io/my-autoclocker" --content /dev/null
+az acr task create --name schedule-auto-clock-in --registry xxxx --schedule "0 1 * * 1-5" --cmd "xxxx.azurecr.io/my-autoclocker" --context /dev/null
 ```
 
 Create another one for clock out (pick your time)
 ```
-az acr task create --name schedule-auto-clock-out --registry xxxx --schedule "3 10 * * 1-5" --cmd "xxxx.azurecr.io/my-autoclocker" --content /dev/null
+az acr task create --name schedule-auto-clock-out --registry xxxx --schedule "3 10 * * 1-5" --cmd "xxxx.azurecr.io/my-autoclocker" --context /dev/null
 ```
 
 ***Note: Timezone is in UTC***
