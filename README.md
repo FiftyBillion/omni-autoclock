@@ -42,14 +42,38 @@ docker push xxxx.azurecr.io/my-autoclocker
 ## Azure CLI
 After the image is pushed to container registry, we can now create the schedule task
 
-Create cron schedule task for clock in
+Create cron schedule task for clock in *[ 9:00 am UTC+8 ]*
 ```
 az acr task create --name schedule-auto-clock-in --registry xxxx --schedule "0 1 * * 1-5" --cmd "xxxx.azurecr.io/my-autoclocker" --context /dev/null
 ```
 
-Create another one for clock out (pick your time)
+Create another one for clock out (pick your time) *[ 6:03 pm UTC+8 ]*
 ```
 az acr task create --name schedule-auto-clock-out --registry xxxx --schedule "3 10 * * 1-5" --cmd "xxxx.azurecr.io/my-autoclocker" --context /dev/null
 ```
+
+
+### When you want temporarily turn off/on the scheduled task (ex. taking PTO), run the command below
+
+Turn off CLOCK-IN:
+```
+az acr task timer update --name schedule-autoclock-in --registry fiftybillion --timer-name t1 --enabled false
+```
+
+Turn off CLOCK-OUT:
+```
+az acr task timer update --name schedule-autoclock-out --registry fiftybillion --timer-name t1 --enabled false
+```
+
+Turn on CLOCK-IN:
+```
+az acr task timer update --name schedule-autoclock-in --registry fiftybillion --timer-name t1 --enabled true
+```
+
+Turn on CLOCK-OUT:
+```
+az acr task timer update --name schedule-autoclock-out --registry fiftybillion --timer-name t1 --enabled true
+```
+
 
 ***Note: Timezone is in UTC***
