@@ -28,7 +28,7 @@ account_field.clear()
 # Fill in your account below (Kevinwu@7503)
 account_field.send_keys('')
 
-password_field = driver.find_element_by_xpath(password_xpath)
+password_field = driver.find_element(By.XPATH, password_xpath)
 
 #Fill in your password below
 password_field.send_keys("" + Keys.ENTER)
