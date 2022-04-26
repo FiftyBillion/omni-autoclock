@@ -6,8 +6,8 @@ RUN apt-get update
 RUN apt-get -y install unzip wget python3-pip
 
 # install google chrome
-RUN wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN dpkg -i google-chrome-stable_current_amd64.deb; exit 0
+RUN wget -c https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_92.0.4515.107-1_amd64.deb
+RUN dpkg -i google-chrome-stable_92.0.4515.107-1_amd64.deb; exit 0
 RUN apt-get install -f -y
 RUN ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 RUN dpkg-reconfigure -f noninteractive tzdata
