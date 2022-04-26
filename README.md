@@ -57,22 +57,22 @@ az acr task create --name schedule-auto-clock-out --registry xxxx --schedule "3 
 
 Turn off CLOCK-IN:
 ```
-az acr task timer update --name schedule-autoclock-in --registry fiftybillion --timer-name t1 --enabled false
+az acr task timer update --name schedule-auto-clock-in --registry xxxx --timer-name t1 --enabled false
 ```
 
 Turn off CLOCK-OUT:
 ```
-az acr task timer update --name schedule-autoclock-out --registry fiftybillion --timer-name t1 --enabled false
+az acr task timer update --name schedule-auto-clock-out --registry xxxx --timer-name t1 --enabled false
 ```
 
 Turn on CLOCK-IN:
 ```
-az acr task timer update --name schedule-autoclock-in --registry fiftybillion --timer-name t1 --enabled true
+az acr task timer update --name schedule-auto-clock-in --registry xxxx --timer-name t1 --enabled true
 ```
 
 Turn on CLOCK-OUT:
 ```
-az acr task timer update --name schedule-autoclock-out --registry fiftybillion --timer-name t1 --enabled true
+az acr task timer update --name schedule-auto-clock-out --registry xxxx --timer-name t1 --enabled true
 ```
 
 
